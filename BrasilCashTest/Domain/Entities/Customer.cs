@@ -1,8 +1,11 @@
-﻿namespace BrasilCashTest.Domain.Entities
+﻿using System;
+
+namespace BrasilCashTest.Domain.Entities
 {
 
         public class Customer
         {
+            public Guid Id { get; private set; }
             public string Name { get; private set; }
             public string TaxId { get; private set; }
             public string Password { get; private set; }

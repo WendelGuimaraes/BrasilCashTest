@@ -14,7 +14,23 @@ namespace BrasilCashTest.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {
-            modelBuilder.Entity<Customer>(entity =>)
+            modelBuilder.Entity<Customer>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasDefaultValueSql("NEWID()");
+            });
+
+            modelBuilder.Entity<Address>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasDefaultValueSql("NEWID()");
+            });
         }
 
 
