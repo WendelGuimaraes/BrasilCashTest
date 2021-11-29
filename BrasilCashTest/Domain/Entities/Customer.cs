@@ -11,9 +11,11 @@ namespace BrasilCashTest.Domain.Entities
             public string Password { get; private set; }
             public string PhoneNumber { get; private set; }
             public string PostalCode { get; private set; }
-            public string Status { get; private set; }
+            public DateTime CreatedAt { get; private set; }
+            public Status Status { get; private set; }
+            public Address Address { get; private set; }
 
-            public Customer(string Name, string TaxId, string Password, string PhoneNumber, string PostalCode)
+        public Customer(string Name, string TaxId, string Password, string PhoneNumber, string PostalCode)
             {
                 this.Name = Name;
                 this.TaxId = TaxId;
