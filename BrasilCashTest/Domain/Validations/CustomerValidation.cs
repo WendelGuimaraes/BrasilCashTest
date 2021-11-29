@@ -6,7 +6,7 @@ namespace BrasilCashTest.Domain.Validations
 
 {
    
-  public class CustomerValidation : AbstractValidator<Customer1>
+  public class CustomerValidation : AbstractValidator<Customer>
     {
             public CustomerValidation()
             {
@@ -19,10 +19,10 @@ namespace BrasilCashTest.Domain.Validations
                 .NotNull()
                 .WithMessage("O campo não pode ser nulo");
 
-            RuleFor(x => x.name)
+            RuleFor(x => x.Name)
             .MaximumLength(60);
 
-            RuleFor(x => x.tax_id)
+            RuleFor(x => x.TaxId);
             
 
         }
