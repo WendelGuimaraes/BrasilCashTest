@@ -3,11 +3,11 @@ using System;
 
 namespace BrasilCashTest.Domain.Entities
 {
-    public class Addres
+    public class Address
     {
-        public Addres () {} // rest sharp para carregar o endereço da API, tem que ter um construtor vazio
+        public Address () {} // rest sharp para carregar o endereço da API, tem que ter um construtor vazio
 
-        public Addres(string street, string district, string city, string state) 
+        public Address(string street, string district, string city, string state) 
         {
             Logradouro = street;
             Bairro = district;

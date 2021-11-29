@@ -10,6 +10,13 @@ namespace BrasilCashTest.Context
 
         public virtual DbSet<Customer> Customer { get; set; }
 
+        public virtual DbSet<Address> Address { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        {
+            modelBuilder.Entity<Customer>(entity =>)
+        }
+
 
     }
 }
