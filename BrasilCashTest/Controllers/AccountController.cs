@@ -7,7 +7,7 @@ using FluentValidation;
 using BrasilCashTest.ViewModels;
 using System.Linq;
 using BrasilCashTest.Repositories;
-
+using BrasilCashTest.Services;
 
 namespace BrasilCashTest.Controllers
 
@@ -37,7 +37,7 @@ namespace BrasilCashTest.Controllers
 
             if (!string.IsNullOrEmpty(customer.PostalCode))
             {
-                var address = Restservice.Get<Address>(@"https://viacep.com.br", $"ws/{customer.PostalCode}/json");
+                var address = RestService.Get<Address>(@"https://viacep.com.br", $"ws/{customer.PostalCode}/json");
                 customer.setAddress(address);
             }
 
