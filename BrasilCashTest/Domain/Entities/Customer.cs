@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrasilCashTest.Domain.Enum;
+using System;
 
 namespace BrasilCashTest.Domain.Entities
 {
@@ -23,15 +24,17 @@ namespace BrasilCashTest.Domain.Entities
                 this.PhoneNumber = PhoneNumber;
                 this.PostalCode = PostalCode;
 
-                if (PostalCode != null)
-                {
-                    Status = "Pending";
-                }
-                else
-                {
-                    Status = "Approved";
-            }
-            }
+
+            if (!string.IsNullOrEmpty(PostalCode))
+                Status = Status.aprroved;
+            else
+                Status = Status.Pending;
+        }
+        public void setAddress(Address address)
+        {
+            Address = address;
+        }
+    
         }
     }
 
