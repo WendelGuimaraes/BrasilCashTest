@@ -5,7 +5,7 @@ namespace BrasilCashTest.Context
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) { }
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
 
         public virtual DbSet<Customer> Customer { get; set; }
